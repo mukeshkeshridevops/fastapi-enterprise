@@ -6,8 +6,10 @@ from app.api.v1.departments import router as departments_router
 from app.api.v1.employees import router as employees_router
 from app.api.v1.health import router as health_router
 from app.api.v1.users import router as users_router
+
 # Exception Handler
 from app.core.exceptions import AppException, app_exception_handler
+
 # Middleware
 from app.middleware.logging_middleware import LoggingMiddleware
 
