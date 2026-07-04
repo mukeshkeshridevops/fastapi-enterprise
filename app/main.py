@@ -1,24 +1,22 @@
 from fastapi import FastAPI
 
-# Middleware
-from app.middleware.logging_middleware import LoggingMiddleware
-
-# Exception Handler
-from app.core.exceptions import AppException, app_exception_handler
-
 # Routers
 from app.api.v1.auth import router as auth_router
-from app.api.v1.users import router as users_router
-from app.api.v1.employees import router as employees_router
 from app.api.v1.departments import router as departments_router
+from app.api.v1.employees import router as employees_router
 from app.api.v1.health import router as health_router
+from app.api.v1.users import router as users_router
+# Exception Handler
+from app.core.exceptions import AppException, app_exception_handler
+# Middleware
+from app.middleware.logging_middleware import LoggingMiddleware
 
 app = FastAPI(
     title="Enterprise FastAPI",
     description="Production Ready FastAPI Application",
     version="1.0.0",
     docs_url="/docs",
-    redoc_url="/redoc"
+    redoc_url="/redoc",
 )
 
 # Register Middleware
@@ -40,5 +38,5 @@ def root():
     return {
         "application": "Enterprise FastAPI",
         "version": "1.0.0",
-        "status": "Running"
+        "status": "Running",
     }

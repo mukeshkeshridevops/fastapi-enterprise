@@ -15,6 +15,7 @@ SessionLocal = sessionmaker(
     bind=engine,
 )
 
+
 def get_db():
     """FastAPI dependency to provide a database session."""
     db = SessionLocal()
